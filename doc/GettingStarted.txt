@@ -1,0 +1,6 @@
+展開後のプロジェクト直下にある 'build.xml' ファイルが、Blanco2g を利用するためのサンプル Ant スクリプトです。
+この 'build.xml' から 'blanco2g' という名称の Ant ターゲットを実行することにより、Blanco2g ソースコード自動生成を実行することができます。
+
+src フォルダ内の 「Abstract」から開始される Java ソースコードが入力ファイルとなります。
+
+# build フォルダ内にある 'build.xml' ファイルは、blanco2gDistribution そのものをビルドするためのものです。

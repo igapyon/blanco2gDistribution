@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="blanco2g" default="blanco2g" basedir=".">
+	<property name="encoding" value="UTF-8" />
+
+	<target name="blanco2g">
+		<!-- Entry point for Blanco2g -->
+		<!-- Two pass code generate -->
+		<blanco2g sourcedir="src" sourcedir2="blanco/main" targetdir="blanco/main" verbose="true" />
+		<blanco2g sourcedir="src" sourcedir2="blanco/main" targetdir="blanco/main" verbose="true" />
+	</target>
+
+	<target name="blanco1g">
+		<blancoanttask metadir="meta/anttask" encoding="${encoding}" />
+		<blancoconstants metadir="meta/constants" encoding="${encoding}" />
+		<blancocsv metadir="meta/csv" encoding="UTF-8" />
+		<blancomessage metadir="meta/message" encoding="${encoding}" />
+		<blancologmessage metadir="meta/logmessage" targetlogger="java.util.logging" encoding="${encoding}" />
+		<blancoresourcebundle metadir="meta/resourcebundle" commenttimestamp="false" encoding="${encoding}" />
+		<blancovalueobject metadir="meta/valueobject" encoding="${encoding}" />
+		<!--<blancodb basepackage="my.db" jdbcdriver="org.postgresql.Driver" jdbcurl="jdbc:postgresql://localhost:5432/" jdbcuser="postgres" jdbcpassword="password" metadir="meta/sql" sql="true" table="false" encoding="UTF-8" />-->
+	</target>
+
+	<target name="meta.clean">
+		<delete>
+			<fileset dir="blanco/main">
+				<include name="**/*.java" />
+				<include name="**/*.properties" />
+			</fileset>
+		</delete>
+	</target>
+
+	<!-- Ant Task Def : Begin -->
+
+	<!-- Blanco2g Task Def -->
+	<taskdef name="blanco2g" classname="blanco.blanco2g.task.Blanco2gTask">
+		<classpath>
+			<fileset dir="lib/blancofw" includes="*.jar" />
+			<fileset dir="lib/blanco1g" includes="*.jar" />
+			<fileset dir="lib/blanco2g" includes="*.jar" />
+			<fileset dir="lib/eclipse" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- Blanco1g Task Def -->
+	<taskdef name="blancoanttask" classname="blanco.anttask.task.BlancoAntTaskTask">
+		<classpath>
+			<fileset dir="lib/blanco1g" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="blancoconstants" classname="blanco.constants.task.BlancoConstantsTask">
+		<classpath>
+			<fileset dir="lib/blanco1g" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="blancocsv" classname="blanco.csv.task.BlancoCsvTask">
+		<classpath>
+			<fileset dir="lib/blanco1g" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="blancomessage" classname="blanco.message.task.BlancoMessageTask">
+		<classpath>
+			<fileset dir="lib/blanco1g" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="blancologmessage" classname="blanco.logmessage.task.BlancoLogMessageTask">
+		<classpath>
+			<fileset dir="lib/blanco1g" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="blancoresourcebundle" classname="blanco.resourcebundle.task.BlancoResourceBundleTask">
+		<classpath>
+			<fileset dir="lib/blanco1g" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="blancovalueobject" classname="blanco.valueobject.task.BlancoValueObjectTask">
+		<classpath>
+			<fileset dir="lib/blanco1g" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="blancodb" classname="blanco.db.task.BlancoDbTask">
+		<classpath>
+			<fileset dir="lib/blanco1g" includes="*.jar" />
+		</classpath>
+	</taskdef>
+	<!-- Ant Task Def : End -->
+</project>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="blanco/main"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/sample/javax.servlet.jsp.jar"/>
+	<classpathentry kind="lib" path="lib/sample/jsf-api.jar"/>
+	<classpathentry kind="lib" path="lib/sample/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="lib/sample/struts-core-1.3.10.jar"/>
+	<classpathentry kind="lib" path="lib/blancofw/blancofw-0.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/blanco2g/blanco2g-runtime-0.6.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

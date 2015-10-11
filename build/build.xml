@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="blanco2g" default="build" basedir=".">
+	<property name="version" value="0.6.0" />
+
+	<!-- blancoAnt(0.2.2)により自動生成されました。 (2011/11/05) -->
+	<target name="build" depends="copy,pack" />
+
+	<target name="copy">
+		<copy todir="../lib/blancofw" preservelastmodified="true">
+			<fileset dir="../../blanco2g/lib/blancofw">
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+		<copy todir="../lib/blanco1g" preservelastmodified="true">
+			<fileset dir="../../blanco2g/lib/blanco1g">
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+		<copy todir="../lib/blanco2g" preservelastmodified="true">
+			<fileset dir="../../blanco2g/lib/blanco2g">
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+		<copy todir="../lib/eclipse" preservelastmodified="true">
+			<fileset dir="../../blanco2g/lib/eclipse">
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="pack">
+		<echo>Pack Project</echo>
+		<delete file="../blanco2gDistribution-${version}.zip" />
+
+		<zip destfile="../blanco2gDistribution-${version}.zip">
+			<zipfileset dir=".." prefix="blanco2gDistribution" excludes="blanco2gDistribution*.zip,**/*.class" />
+		</zip>
+	</target>
+
+</project>
