@@ -1,6 +1,9 @@
 Next
   同梱する blancoDb について 2.2.4 にバージョンアップ
 
+20151012
+  Move from OSDN to github.
+
 0.6.0-I201301091311
   update to blancomessage-0.6.3.jar jar.
   (blanco2gDistribution) update blancoDb jars.
